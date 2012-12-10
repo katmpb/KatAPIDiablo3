@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+</head>
+
+	   
+<body>
+<script type="text/javascript">	
+//WIDGET DIABLO
+	//<[!CDATA[
+        jQuery.noConflict();
+        
+      	//LEFT
+      	jQuery(function(){									
+			jQuery("#diabloLEFT").hover(function(){				
+				jQuery(this).stop(true,false).animate({left: "0px"}, 500 );			
+			},
+			function(){	
+				jQuery("#diabloLEFT").stop(true,false).animate({left: "-304px"}, 500 );
+				
+			});									
+		});
+        
+        //RIGHT
+		jQuery(function(){									
+			jQuery("#diabloRIGHT").hover(function(){				
+				jQuery(this).stop(true,false).animate({right: "0px"}, 500 );			
+			},
+			function(){	
+				jQuery("#diabloRIGHT").stop(true,false).animate({right: "-304px"}, 500 );
+				
+			});									
+		});		
+
+		//Main layer - LEFT
+		function doDiabloLEFT(page, language) {			
+			jQuery.ajax({
+				async: true, 
+				type: "POST",												
+				url: "http://www.katmpbsoft.pl/BLOG/diablo/diablo.php",
+				data: "page="+page+"&language="+language,																					
+				success: function(news){								
+						jQuery("#diablo_newsLEFT").html(news+'<center><table><tr><td style="text-align:center; height:60px;"><div id="more_n2" style="height:20px; text-align:center; color:#9F0; cursor:pointer" onclick="doSecurityLEFT('+(page+1)+', '+(language)+');" onmouseover="more_news(1, 2);" onmouseout="more_news(0, 2);">MORE ARCHIWE NEWS</div></td></tr></table><BR/></center>');						
+						return (true);
+					},
+				error: function(e){														
+						return (false);							
+					}		
+				});				
+		}
+		
+		//Main layer - RIGHT
+		function doDiabloRIGHT(page, language) {			
+			jQuery.ajax({
+				async: true, 
+				type: "POST",												
+				url: "http://www.katmpbsoft.pl/BLOG/diablo/diablo.php",
+				data: "page="+page+"&language="+language,																					
+				success: function(news){								
+						jQuery("#diablo_newsRIGHT").html(news+'<center><table><tr><td style="text-align:center; height:60px;"><div id="more_n1" style="height:20px; text-align:center; color:#9F0; cursor:pointer" onclick="doSecurityRIGHT('+(page+1)+', '+(language)+');" onmouseover="more_news(1, 1);" onmouseout="more_news(0, 1);">WIĘCEJ ARCHIWALNYCH NEWS-ÓW</div></td></tr></table><BR/></center>');						
+						return (true);
+					},
+				error: function(e){														
+						return (false);							
+					}		
+				});				
+		}
+		
+		//Secure layer - LEFT
+		function doSecurityLEFT(page, language) {			
+			jQuery.ajax({
+				async: true, 
+				type: "POST",								
+				url: "http://www.katmpbsoft.pl/BLOG/diablo/security.php",
+				data: "security=diablo3",
+				beforeSend: function() {				
+					jQuery("#diablo_newsLEFT").html('<center><table><tr><td style="text-align:center; height:400px; color:red; font-size:18px;">Loading...<BR/><BR/><img src="http://www.katmpbsoft.pl/BLOG/diablo/diablo-loader.gif"/></td></tr></table><center>');
+				},
+				success: function(){						
+						doDiabloLEFT(page, language);
+						return (true);
+					},
+				error: function(error){														
+						return (false);							
+					}		
+				});				
+		}
+		
+		//Secure layer - RIGHT
+		function doSecurityRIGHT(page, language) {			
+			jQuery.ajax({
+				async: true, 
+				type: "POST",								
+				url: "http://www.katmpbsoft.pl/BLOG/diablo/security.php",
+				data: "security=diablo3",
+				beforeSend: function() {				
+					jQuery("#diablo_newsRIGHT").html('<center><table><tr><td style="text-align:center; height:400px; color:red; font-size:18px;">Ładowanie...<BR/><BR/><img src="http://www.katmpbsoft.pl/BLOG/diablo/diablo-loader.gif"/></td></tr></table><center>');
+				},
+				success: function(){						
+						doDiabloRIGHT(page, language);
+						return (true);
+					},
+				error: function(error){														
+						return (false);							
+					}		
+				});				
+		}
+		
+		function more_news(zmp, who)
+		{		
+			if (zmp == 1) {			
+				document.getElementById('more_n'+who).style.color='red';				
+			}
+			else
+			{
+				document.getElementById('more_n'+who).style.color='#9F0';
+			}
+		}
+	//]]>
+//END WIDGET DIABLO
+</script>
+
+<!--WIDGET DIABLO-->
+<!--FIRST-->
+<!--RIGHT-->
+<div id="diabloRIGHT" style="right: -304px; z-index: 9999; background: #000000; padding: 0px; width: 300px; height:550px; position: fixed; top: 50px; border: 2px solid #3B95D8">
+		<a href="#"></a><img style="position: absolute; left:-47px;" src="http://www.katmpbsoft.pl/BLOG/diablo/diabloRIGHT.png" />		
+		<div id="diablo_newsRIGHT" style="overflow-y: auto; width:300px; height:550px; color:#FFFFFF; font-size:13px; text-align:left;"></div>
+</div>
+<!--LEFT-->
+<div id="diabloLEFT" style="left: -304px; z-index: 9999; background: #000000; padding: 0px; width: 300px; height:550px; position: fixed; top: 50px; border: 2px solid #3B95D8">
+		<a href="#"></a><img style="position: absolute; left:+300px;" src="http://www.katmpbsoft.pl/BLOG/diablo/diabloLEFT.png" />		
+		<div id="diablo_newsLEFT" style="overflow-y: auto; width:300px; height:550px; color:#FFFFFF; font-size:13px; text-align:left;"></div>
+</div>
+<!--END FIRST-->
+<!--ORDER IS IMPORTANT FOR WAITING LOADING NEWS ON START WHEN FIRST USE doSecurity()-->
+<!--SECOND-->
+<script>
+	doSecurityRIGHT(1, 1); //First argument: who page's news   -   Second argument: languages[ 1-PL, 2-EN ]
+	doSecurityLEFT(1, 2); //First argument: who page's news   -   Second argument: languages[ 1-PL, 2-EN ]
+</script>
+<!--END SECOND-->
+<!--END WIDGET DIABLO-->
+
+<BR/><BR/><BR/><BR/>
+<div style="text-align:center"><font color="red">Paski są darmowe do użytku osobistego i komercyjnego !!!<BR/>Paski nie bazują na DIABLO API Documentation, gdyż to API nie umożliwia pobierania NEWS-ÓW<BR/><a href="http://us.battle.net/d3/en/forum/topic/6246876981" target="_blank">Więcej</a><BR/>Jeżeli prowadzisz portal, forum, klanową stronę WWW o DIABLO, to w pełni darmowe paski są idealne dla Ciebie.<BR/>Oprogramownaie jest OpenSource</font></div><BR/><BR/><BR/>
+<div style="text-align:center"><font color="green">You can download and use it completely free - yep - completely 100% free for your personal and commercial projects<BR/>Bars are not based on API Documentation DIABLO, because this API does not allow downloading NEWS<BR/><a href="http://us.battle.net/d3/en/forum/topic/6246876981" target="_blank">More</a><BR/>If you run a website, forum, clan website of DIABLO, a fully free strips are perfect for you.<BR/>Software is OpenSource</font></div><BR/>
+
+</body>
+</html>

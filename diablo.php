@@ -8,7 +8,8 @@ class Diablo
 	protected $_doc;
 	protected $_lang;
 
-	//JĘZYK STRONY BLIZZ - SOON
+	//JĘZYK STRONY BLIZZ
+	//SIDE'S LANGUAGE BLIZZ
 	protected $_languages = array(
 			"PL" => "1",
 			"EN" => "2"
@@ -231,20 +232,20 @@ class Diablo
 		
 		if (strlen($tmp) > 0)
 		{
-			$czy_nastepne = 1;
+			$if_next = 1;
 			
 		
 		while ($ret)
 		{
 			$tmp_ost = "";
 
-			$blad_strona_blizz = 0;
+			$error_side_blizz = 0;
 			//BŁĄD STRONY BLIZZ
-			//ERROR SITE BLIZZ
+			//ERROR SIDE BLIZZ
 			$q = "//div[@class='news-article  '][".($count+1)."]//div[@class='news-article-inner'][1]//div[@class='article-right'][1]//div[@class='article-summary'][1]//p";
 			$ret = $xpath->query($q);
 			if ($ret->length==0) {
-				$blad_strona_blizz=1;
+				$error_side_blizz=1;
 			};
 			//KONIEC
 			//END
@@ -275,14 +276,16 @@ class Diablo
 			}
 
 			$q = "//div[@class='news-article  '][".$count."]//div[@class='news-article-inner'][1]//div[@class='article-right'][1]//div[@class='article-summary'][1]//p";
+			//TEMP
 			//$q = "//div[@class='news-article-inner'][".$count."]//div[@class='article-right'][1]//div[@class='article-summary'][1]//p";
+			//END TEMP
 			$ret = $xpath->query($q);
 			if (count($ret)) {
 				foreach ($ret as $nd) {
 					$tmp_ch = strip_tags($nd->nodeValue, "<span>");
 					$tmp_ost = $tmp_ost.$tmp_ch;
 				}
-				if ($ret->length>0) {$ret=1; $czy_nastepne=0;} else {$ret=0;};
+				if ($ret->length>0) {$ret=1; $if_next=0;} else {$ret=0;};
 			}
 			
 			
@@ -332,7 +335,7 @@ class Diablo
 			
 			$tmp_ost = $tmp_ost."</td></tr></table>";
 
-			if ((($blad_strona_blizz == 1) && ($ret==1)) || ($czy_nastepne==1))
+			if ((($error_side_blizz == 1) && ($ret==1)) || ($if_next==1))
 			{
 				$tmp = $tmp.$this->getLastPost($number);
 			}
@@ -360,8 +363,8 @@ if (
 	{
 		echo '<HTML><HEAD><meta http-equiv="Content-Type" content="text/html" charset="utf-8"></HEAD><BODY>';
 		echo '<HTML><BODY onLoad="setTimeout(\'toTop()\', 500);">';	
-		echo '<center><font color="red">'."Jeżeli już tu zajrzałeś to pewnie się zainteresowałeś - POZOSTAJEMY DO TWOJEJ DYSPOZYCJI !!!".'</font><center><BR/>';
-		echo '<center><font color="green"><b>'."If you are already here, it's probably to get interested - remains at your disposal".'</b></font><center><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>';
+		/*PL*/echo '<center><font color="red">'."Jeżeli już tu zajrzałeś to pewnie się zainteresowałeś - POZOSTAJEMY DO TWOJEJ DYSPOZYCJI !!!".'</font><center><BR/>';
+		/*EN*/echo '<center><font color="green"><b>'."If you are already here, it's probably to get interested - remains at your disposal".'</b></font><center><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>';
 		echo '<div style="display:none;"><embed src="http://www.katmpbsoft.pl/BLOG/diablo/Living Darfur.mp3" hidden="true"/><div>';
 		echo "<script>function toTop() {window.scrollTo(0,0);};</script>";
 		echo '</BODY></HTML>';
@@ -397,8 +400,8 @@ else
 {
 	echo '<HTML><HEAD><meta http-equiv="Content-Type" content="text/html" charset="utf-8"></HEAD><BODY>';	
 	echo '<HTML><BODY onLoad="setTimeout(\'toTop()\', 500);">';	
-	echo '<center><font color="red">'."Jeżeli już tu zajrzałeś to pewnie się zainteresowałeś - POZOSTAJEMY DO TWOJEJ DYSPOZYCJI !!!".'</font><center><BR/>';
-	echo '<center><font color="green"><b>'."If you are already here, it's probably to get interested - remains at your disposal".'</b></font><center><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>';
+	/*PL*/echo '<center><font color="red">'."Jeżeli już tu zajrzałeś to pewnie się zainteresowałeś - POZOSTAJEMY DO TWOJEJ DYSPOZYCJI !!!".'</font><center><BR/>';
+	/*EN*/echo '<center><font color="green"><b>'."If you are already here, it's probably to get interested - remains at your disposal".'</b></font><center><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>';
 	echo '<div style="display:none;"><embed src="http://www.katmpbsoft.pl/BLOG/diablo/Living Darfur.mp3" hidden="true" showcontrols="0" showdisplay="0"/><div>';
 	echo "<script>function toTop() {window.scrollTo(0,0);};</script>";	
 	echo '</BODY></HTML>';

@@ -8,8 +8,8 @@ class Diablo
 	protected $_doc;
 	protected $_lang;
 
-	//JĘZYK STRONY BLIZZ
-	//SIDE'S LANGUAGE BLIZZ
+	//PL//JĘZYK STRONY BLIZZ
+	//EN//Blizz site language
 	protected $_languages = array(
 			"PL" => "1",
 			"EN" => "2"
@@ -26,8 +26,8 @@ class Diablo
 		}			
 	}	
 
-	//Inicjalizacja mechanizmu przeszukiwania stron BLIZZ
-	//Inicialization BLIZZ
+	//PL//Inicjalizacja mechanizmu przeszukiwania stron BLIZZ
+	//EN//Initialization BLIZZ
 	public function getDoc($number)
 	{		
 		if (null === $this->_doc) {			
@@ -50,8 +50,8 @@ class Diablo
 		return $this->_doc;
 	}
 	
-	//Funkcja pomocnicza
-	//Help method
+	//PL//Funkcja pomocnicza
+	//EN//Help method
 	public function getLatestPost($number)
 	{
 		$tmp = "";
@@ -135,8 +135,8 @@ class Diablo
 		return ($tmp);
 	}
 
-	//Funkcja pomocnicza
-	//Help method
+	//PL//Funkcja pomocnicza
+	//EN//Help method
 	public function getLastPost($number)
 	{
 		$tmp = "";
@@ -240,15 +240,15 @@ class Diablo
 			$tmp_ost = "";
 
 			$error_side_blizz = 0;
-			//BŁĄD STRONY BLIZZ
-			//ERROR SIDE BLIZZ
+			//PL//BŁĄD STRONY BLIZZ
+			//EN//ERROR PAGE BLIZZ
 			$q = "//div[@class='news-article  '][".($count+1)."]//div[@class='news-article-inner'][1]//div[@class='article-right'][1]//div[@class='article-summary'][1]//p";
 			$ret = $xpath->query($q);
 			if ($ret->length==0) {
 				$error_side_blizz=1;
 			};
-			//KONIEC
-			//END
+			//PL//KONIEC
+			//EN//END
 
 			$tmp_ost = $tmp_ost."<table><tr><td>";
 			$q = "//div[@class='news-article  '][".$count."]//div[@class='news-article-inner'][1]//h3[1]";			
@@ -392,7 +392,8 @@ if (
 		//END TEMP
 		
 		
-		$all_news = preg_replace('/[^a-zA-Z0-9~!@#$%^&*()\-_+={[}\|\\:;"\'<,>.?\/ €‚ƒ„…‡ˆ‰‹ŒŽ‘’“”•–—˜™š›œ¡¢£¤¥¦§¨©«¬®¯°±²³´µ¶·¸¹º»¼½¾¿×÷ ąćęłńóśżźĄĆĘŁŃÓŚŻŹ]/',' ',$all_news);			
+		/*PL AND EN*/$all_news = preg_replace('/[^a-zA-Z0-9~!@#$%^&*()\-_+={[}\|\\:;"\'<,>.?\/ €‚ƒ„…‡ˆ‰‹ŒŽ‘’“”•–—˜™š›œ¡¢£¤¥¦§¨©«¬®¯°±²³´µ¶·¸¹º»¼½¾¿×÷ ąćęłńóśżźĄĆĘŁŃÓŚŻŹ]/',' ',$all_news);
+		//ONLY EN//$all_news = preg_replace('/[^a-zA-Z0-9~!@#$%^&*()\-_+={[}\|\\:;"\'<,>.?\/ €‚ƒ„…‡ˆ‰‹ŒŽ‘’“”•–—˜™š›œ¡¢£¤¥¦§¨©«¬®¯°±²³´µ¶·¸¹º»¼½¾¿×÷]/',' ',$all_news);
 		echo $all_news;
 	}
 }

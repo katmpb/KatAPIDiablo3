@@ -113,11 +113,11 @@ class Diablo
 					{
 						if ($this->_lang == 1)
 						{
-							$tmp = $tmp.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+							$tmp = $tmp.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
 						}
 						else
 						{
-							$tmp = $tmp.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+							$tmp = $tmp.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
 						}
 					}
 					break;

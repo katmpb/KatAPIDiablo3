@@ -365,7 +365,7 @@ if (
 		echo '<HTML><BODY onLoad="setTimeout(\'toTop()\', 500);">';	
 		/*PL*/echo '<center><font color="red">'."Jeżeli już tu zajrzałeś to pewnie się zainteresowałeś - POZOSTAJEMY DO TWOJEJ DYSPOZYCJI !!!".'</font><center><BR/>';
 		/*EN*/echo '<center><font color="green"><b>'."If you are already here, it's probably to get interested - remains at your disposal".'</b></font><center><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>';
-		echo '<div style="display:none;"><embed src="http://www.katmpbsoft.pl/BLOG/diablo/Living Darfur.mp3" hidden="true"/><div>';
+		echo '<div style="display:none;"><embed src="http://www.katmpbsoft.pl/BLOG/diablo/LivingDarfur.mp3" hidden="true"/><div>';
 		echo "<script>function toTop() {window.scrollTo(0,0);};</script>";
 		echo '</BODY></HTML>';
 	}
@@ -403,7 +403,7 @@ else
 	echo '<HTML><BODY onLoad="setTimeout(\'toTop()\', 500);">';	
 	/*PL*/echo '<center><font color="red">'."Jeżeli już tu zajrzałeś to pewnie się zainteresowałeś - POZOSTAJEMY DO TWOJEJ DYSPOZYCJI !!!".'</font><center><BR/>';
 	/*EN*/echo '<center><font color="green"><b>'."If you are already here, it's probably to get interested - remains at your disposal".'</b></font><center><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>';
-	echo '<div style="display:none;"><embed src="http://www.katmpbsoft.pl/BLOG/diablo/Living Darfur.mp3" hidden="true" showcontrols="0" showdisplay="0"/><div>';
+	echo '<div style="display:none;"><embed src="http://www.katmpbsoft.pl/BLOG/diablo/LivingDarfur.mp3" hidden="true" showcontrols="0" showdisplay="0"/><div>';
 	echo "<script>function toTop() {window.scrollTo(0,0);};</script>";	
 	echo '</BODY></HTML>';
 }

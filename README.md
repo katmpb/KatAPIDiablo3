@@ -14,4 +14,4 @@ This API are not based on API Documentation DIABLO, because this API does not al
 <h2>About</h2>
 
 Written by <a href="http://www.katmpbsoft.pl/index_en.htm" target="_blank">KatMPBSoft</a>,
-Autor: <a href="http://katmpbsoft.blogspot.com/2012/12/diablo-3-wysuwany-pasek-panel-boczny.html" target="_blank">KatMPB</a>
+Autor: <a href="http://katmpbsoft.blogspot.com/2012/12/diablo-3-new-api-web-php-html-slidebox.html" target="_blank">KatMPB</a>

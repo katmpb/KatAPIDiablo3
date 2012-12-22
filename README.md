@@ -20,3 +20,5 @@ Autor: <a href="http://katmpbsoft.blogspot.com/2012/12/diablo-3-new-api-web-php-
 
 DEMO: <a href="http://www.katmpbsoft.pl/BLOG/diablo/diablo.htm" target="_blank">HERE</a>
 Description: <a href="http://katmpbsoft.blogspot.com/2012/12/diablo-3-new-api-web-php-html-slidebox.html" target="_blank">HERE</a>
+
+<h4>Have a good time</h4>

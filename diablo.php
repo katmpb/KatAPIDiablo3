@@ -109,7 +109,11 @@ class Diablo
 					}
 				}				
 
-				$q = "//div[@class='blog-articles']//div[@class='article-wrapper'][".($count+1)."]//div[@class='article-content'][1]//div[@itemprop='description']//p";
+				$q = '';
+				$q = "//div[@class='blog-articles']//div[@class='article-wrapper'][".($count+1)."]//div[@class='article-content'][1]//div[@itemprop='description']//p";				
+				if (count($ret)) {				
+					$q = "//div[@class='blog-articles']//div[@class='article-wrapper'][".($count+1)."]//div[@class='article-content'][1]//div[@itemprop='description'][1]";
+				}
 				$ret = $xpath->query($q);
 				if (count($ret)) {
 					foreach ($ret as $nd) {
@@ -186,7 +190,12 @@ class Diablo
 						}
 					}
 			
-					$q = "//div[@class='article-page']//div[@class='article-wrapper'][".($count+1)."]//div[@class='article-content'][1]//div[@itemprop='description']//p";
+					$q = '';
+					$q = "//div[@class='article-page']//div[@class='article-wrapper'][".($count+1)."]//div[@class='article-content'][1]//div[@itemprop='description']//p";										
+					$ret = $xpath->query($q);
+					if (count($ret)) {
+						$q = "//div[@class='article-page']//div[@class='article-wrapper'][".($count+1)."]//div[@class='article-content'][1]//div[@itemprop='description'][1]";
+					}
 					$ret = $xpath->query($q);
 					if (count($ret)) {
 						foreach ($ret as $nd) {

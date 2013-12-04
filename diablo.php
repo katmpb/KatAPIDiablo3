@@ -127,29 +127,56 @@ class Diablo
 				$ret = $xpath->query($q);
 				if (count($ret)) {
 					foreach ($ret as $nd) {				
-						if (substr($nd->nodeValue, 0, 4) == "blog")
-						
-						{
-							if ($this->_lang == 1)
+							if (substr($nd->nodeValue, 0, 4) == "blog")			
 							{
-								$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net/d3/pl/'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+								if (strpos($nd->nodeValue, 'eu.battle.net')!==false)
+								{
+									if ($this->_lang == 1)
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+									}
+									else
+									{										
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+									}
+								}
+								else
+								{
+									if ($this->_lang == 1)
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net/d3/pl/'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+									}
+									else
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net/d3/en/'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+									}																	
+								}
 							}
 							else
 							{
-								$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net/d3/en/'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+								if (strpos($nd->nodeValue, 'eu.battle.net')!==false)
+								{
+									if ($this->_lang == 1)
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+									}
+									else
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+									}
+								}
+								else
+								{
+									if ($this->_lang == 1)
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+									}
+									else
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+									}									
+								}
 							}
-						}
-						else
-						{
-							if ($this->_lang == 1)
-							{
-								$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
-							}
-							else
-							{
-								$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
-							}
-						}
 					}
 				}
 									
@@ -209,27 +236,54 @@ class Diablo
 					$ret = $xpath->query($q);
 					if (count($ret)) {
 						foreach ($ret as $nd) {
-							if (substr($nd->nodeValue, 0, 4) == "blog")
-			
+							if (substr($nd->nodeValue, 0, 4) == "blog")			
 							{
-								if ($this->_lang == 1)
+								if (strpos($nd->nodeValue, 'eu.battle.net')!==false)
 								{
-									$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net/d3/pl/'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+									if ($this->_lang == 1)
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+									}
+									else
+									{										
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+									}
 								}
 								else
 								{
-									$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net/d3/en/'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+									if ($this->_lang == 1)
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net/d3/pl/'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+									}
+									else
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net/d3/en/'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+									}																	
 								}
 							}
 							else
 							{
-								if ($this->_lang == 1)
+								if (strpos($nd->nodeValue, 'eu.battle.net')!==false)
 								{
-									$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+									if ($this->_lang == 1)
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+									}
+									else
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+									}
 								}
 								else
 								{
-									$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+									if ($this->_lang == 1)
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">wi&#281;cej</font></a>';
+									}
+									else
+									{
+										$tmp_ost = $tmp_ost.'&nbsp;&nbsp;<a href="http://eu.battle.net'.$nd->nodeValue.'" target="_blank"><font color="#99fF00">more</font></a>';
+									}									
 								}
 							}
 						}
